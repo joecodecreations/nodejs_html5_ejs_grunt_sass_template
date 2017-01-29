@@ -1,0 +1,39 @@
+{
+  "name": "tutor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joseph Sanchez",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^6.5.0",
+    "connect-livereload": "^0.6.0",
+    "cssnano": "^3.8.1",
+    "eslint": "^3.8.1",
+    "grunt": "~0.4.5",
+    "grunt-auto-install": "~0.3.1",
+    "grunt-cli": "~1.2.0",
+    "grunt-connect-proxy": "^0.2.0",
+    "grunt-contrib-clean": "~1.0.0",
+    "grunt-contrib-concat": "~1.0.0",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-copy": "~1.0.0",
+    "grunt-contrib-csslint": "~0.3.1",
+    "grunt-contrib-cssmin": "~1.0.1",
+    "grunt-contrib-uglify": "~1.0.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-exec": "^1.0.1",
+    "grunt-postcss": "^0.8.0",
+    "grunt-preprocess": "~5.1.0",
+    "grunt-sass": "^1.0.0",
+    "grunt-sass-globbing": "^1.3.0",
+    "gruntify-eslint": "^3.1.0",
+    "load-grunt-tasks": "~3.5.0",
+    "pixrem": "^3.0.2",
+    "postcss-scss": "^0.4.0",
+    "susy": "^2.2.5"
+  }
+}
