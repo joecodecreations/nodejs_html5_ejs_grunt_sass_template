@@ -6,21 +6,17 @@ module.exports = function(grunt) {
       dist: './public_html'
     };
 
-
   /* Local Server Variables Information */
   var connect = {
     port: 3000,
     liveReloadPort: 35729,
-    hostname: '*',
+    hostname: '127.0.0.1',
     localHost: '127.0.0.1'
   };
 
   // Note: The following is not loaded by 'load-grunt-tasks'.
   //grunt.loadNpmTasks('gruntify-eslint');
-
   require('./grunt_tasks/sass.js')(grunt, pkg, paths, connect);
-  //require('./grunt_tasks/javascript.js')(grunt, pkg, paths, connect);
-  //require('./grunt_tasks/files.js')(grunt, pkg, paths, connect);
   require('./grunt_tasks/server.js')(grunt, pkg, paths, connect);
 
   grunt.config.merge({

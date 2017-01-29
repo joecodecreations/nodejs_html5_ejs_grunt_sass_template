@@ -12,8 +12,6 @@ module.exports = function(grunt, pkg, paths, connect) {
           dest: './public_html/assets/styles.css'
         }]
       },
-
-
     },
 
     // https://github.com/nDmitry/grunt-postcss

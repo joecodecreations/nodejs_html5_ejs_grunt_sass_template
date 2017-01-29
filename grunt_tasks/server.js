@@ -8,9 +8,9 @@ module.exports = function(grunt, pkg, paths, connect) {
           livereload: connect.liveReloadPort,
           port: connect.port,
           hostname: connect.hostname,
-          base: paths.src,
+          base: './public_html',
           open: {
-            target: connect.hostname + ':' + connect.port
+            target: 'http://'+connect.hostname + ':' + connect.port
           }
         }
       }
