@@ -88,8 +88,7 @@ module.exports = function(grunt) {
       'sass_globbing',
       'sass',
       'postcss',
-      'connect',
-      'watch'
+      'startServer'
     );
 
     // Kick off the task runs
