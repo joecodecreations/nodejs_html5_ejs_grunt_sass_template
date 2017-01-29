@@ -15,5 +15,21 @@ module.exports = function(grunt, pkg, paths, connect) {
         }
       }
     },
+    express: {
+      options: {
+        // Override defaults here
+      },
+      dev: {
+        options: {
+          script: './server.js'
+        }
+      },
+      prod: {
+        options: {
+          script: './server.js',
+          node_env: 'production'
+        }
+      }
+  }
   });
 }

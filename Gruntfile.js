@@ -110,7 +110,7 @@ module.exports = function(grunt) {
       });
     }
 
-    tasks.push('connect', 'watch');
+    tasks.push('watch');
     // Kick off the task runs
     grunt.task.run(tasks);
   });
