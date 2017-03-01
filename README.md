@@ -3,11 +3,14 @@
 
 * Base HTML5 Template
 * SASS globbing, minification to style sheet
-* Remote express web server
-* Watches sass files for changes
+* NodeJS / Express web server
+* Watches SASS files for changes
 
-Install dependencies by running `npm install`
+1. Install dependencies by running `npm install`
 
-Watch local sass / javascript by running  `grunt watcher`
+2. Install nodemon globally `npm install -g nodemon`
 
-start the local server by runing `node server.js` or `nodemon server.js`
+3. Start server by running `nodemon server.js`
+
+Open another instance in your terminal and run `grunt watcher`
+for style/js changes.
