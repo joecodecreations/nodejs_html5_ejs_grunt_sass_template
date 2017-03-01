@@ -3,7 +3,7 @@
 
 * Base HTML5 Template
 * SASS globbing, minification to style sheet
-* Local web server
+* Remote express web server
 * Watches sass files for changes
 
 
