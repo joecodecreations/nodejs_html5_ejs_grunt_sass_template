@@ -6,5 +6,8 @@
 * Remote express web server
 * Watches sass files for changes
 
+Install dependencies by running `npm install`
 
-Start the local server by running `grunt watcher`
+Watch local sass / javascript by running  `grunt watcher`
+
+start the local server by runing `node server.js` or `nodemon server.js`
