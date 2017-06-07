@@ -1,5 +1,6 @@
-module.exports = function(grunt, pkg, paths, connect) {
-  var path = require('path');
+'use strict';
+module.exports = (grunt, pkg, paths, connect) => {
+  const path = require('path');
   grunt.config.merge({
     connect: {
       server: {
@@ -10,7 +11,7 @@ module.exports = function(grunt, pkg, paths, connect) {
           hostname: connect.hostname,
           base: './public_html',
           open: {
-            target: 'http://'+connect.hostname + ':' + connect.port
+            target: 'http://' + connect.hostname + ':' + connect.port
           }
         }
       }
@@ -30,6 +31,6 @@ module.exports = function(grunt, pkg, paths, connect) {
           node_env: 'production'
         }
       }
-  }
+    }
   });
 }

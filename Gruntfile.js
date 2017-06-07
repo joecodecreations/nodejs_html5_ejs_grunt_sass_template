@@ -1,56 +1,45 @@
 'use strict';
-module.exports = function(grunt) {
-  var pkg = require('./package.json'),
+module.exports = (grunt) => {
+  const pkg = require('./package.json'),
     paths = {
       src: './src',
       dist: './public_html'
     };
 
   /* Local Server Variables Information */
-  var connect = {
+  const connect = {
     port: 3000,
     liveReloadPort: 35729,
     hostname: '127.0.0.1',
     localHost: '127.0.0.1'
   };
 
-  // Note: The following is not loaded by 'load-grunt-tasks'.
-  //grunt.loadNpmTasks('gruntify-eslint');
   require('./grunt_tasks/sass.js')(grunt, pkg, paths, connect);
   require('./grunt_tasks/server.js')(grunt, pkg, paths, connect);
+  require('load-grunt-tasks')(grunt);
 
   grunt.config.merge({
     pkg: grunt.file.readJSON('package.json')
   });
 
-  require('load-grunt-tasks')(grunt);
-
-
   grunt.registerTask('processSass', 'Process sass code.', [
     'sass_globbing',
     'sass',
     'postcss'
-
   ]);
-
 
   grunt.registerTask('default', 'Clean the dist directory, compile Sass, minify the results.', [
     'clean',
     'processSass'
-
   ]);
 
-  // grunt.registerTask('lint', 'Lint the JS code.', [
-  //   'eslint'
-  // ]);
-
-  grunt.registerTask('custom', 'Roll your own task order', function(additionalTasks) {
-    var tasks = [],
+  grunt.registerTask('custom', 'Roll your own task order', function (additionalTasks) {
+    let tasks = [],
       n = 0,
       e = 0;
     if (additionalTasks !== undefined) {
-      var taskList = additionalTasks.split(',');
-      taskList.forEach(function(taskName) {
+      let taskList = additionalTasks.split(',');
+      taskList.forEach((taskName) => {
         e = (n < 1) ? '\n\n\n' : '';
         n++;
         if (grunt.task.exists(taskName)) {
@@ -67,15 +56,13 @@ module.exports = function(grunt) {
     } else {
       grunt.log.writeln('you have not added any tasks.....terminating');
     }
-
   });
 
-  grunt.registerTask('watcher', 'Compiles your sass and watches for changes', function(additionalTasks) {
-    var tasks = [];
-
+  grunt.registerTask('watcher', 'Compiles your sass and watches for changes', function (additionalTasks) {
+    let tasks = [];
     if (additionalTasks !== undefined) {
-      var taskList = additionalTasks.split(',');
-      taskList.forEach(function(taskName) {
+      let taskList = additionalTasks.split(',');
+      taskList.forEach(function (taskName) {
         if (grunt.task.exists(taskName)) {
           tasks.push(taskName);
           grunt.log.writeln('[SUCCESS] Pushing Task for use:' + taskName);
@@ -84,6 +71,7 @@ module.exports = function(grunt) {
         }
       });
     }
+
     tasks.push(
       'sass_globbing',
       'sass',
@@ -95,12 +83,11 @@ module.exports = function(grunt) {
     grunt.task.run(tasks);
   });
 
-  grunt.registerTask('startServer', 'start server', function(additionalTasks) {
-    var tasks = [];
-
+  grunt.registerTask('startServer', 'start server', (additionalTasks) => {
+    let tasks = [];
     if (additionalTasks !== undefined) {
       var taskList = additionalTasks.split(',');
-      taskList.forEach(function(taskName) {
+      taskList.forEach((taskName) => {
         if (grunt.task.exists(taskName)) {
           tasks.push(taskName);
           grunt.log.writeln('[SUCCESS] Pushing Task for use:' + taskName);
@@ -109,9 +96,7 @@ module.exports = function(grunt) {
         }
       });
     }
-
     tasks.push('watch');
-    // Kick off the task runs
     grunt.task.run(tasks);
   });
 };

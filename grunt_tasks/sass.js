@@ -1,4 +1,5 @@
-module.exports = function(grunt, pkg, paths, connect) {
+'use strict';
+module.exports = (grunt, pkg, paths, connect) => {
   grunt.config.merge({
 
     sass: {
@@ -55,14 +56,14 @@ module.exports = function(grunt, pkg, paths, connect) {
         }
       }
     },
-        // https://www.npmjs.com/package/grunt-contrib-clean
+    // https://www.npmjs.com/package/grunt-contrib-clean
     clean: {
       dist: ['./public_html/assets/styles.css']
     },
     watch: {
       sass: {
         files: ['./src/sass/**/*.scss'],
-        tasks: ['sass_globbing','sass', 'postcss'],
+        tasks: ['sass_globbing', 'sass', 'postcss'],
         options: {
           livereload: {
             host: connect.localHost,

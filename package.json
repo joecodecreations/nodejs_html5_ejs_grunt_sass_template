@@ -1,7 +1,7 @@
 {
-  "name": "myWebApplication",
+  "name": "nodejs_html5_ejs_grunt_sass_template",
   "version": "1.0.0",
-  "description": "Sample Application Framework",
+  "description": "Quick setup for node, html5, grunt, sass",
   "main": "index.js",
   "repository": "git@github.com:joecodecreations/nodejs_html5_ejs_grunt_sass_template.git",
   "scripts": {
